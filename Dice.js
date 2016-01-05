@@ -1,9 +1,47 @@
 "use strict";
 
-function randomeDiceRoll(number)
+var player;
+var dealer;
+
+function randomDiceRoll()
 {
-	number=Math.floor((Math.random() * 20) + 1);
-	return number;
+	var num=Math.floor((Math.random() * 10) + 1);
+	return num;
 }
 
-function dealHand(hand[5])
+function dealCard(num)
+{
+	var newTotalHandValue;
+	newTotalHandValue=num+randomDiceRoll();
+	return newTotalHandValue;
+}
+player=dealCard(randomDiceRoll());
+console.log("your hand total is "+player);
+
+/*function randomDiceRoll() {
+
+		var dealerCards = Math.floor((Math.random() * 10));
+
+		return dealerCards;  
+
+	}
+
+	console.log(randomDiceRoll()); 
+
+ 
+
+	function hitDonthit(total) {
+
+
+	if (total <= 17) {
+
+		
+		console.log("Dealer Stays");
+	} else {
+
+		console.log("Dealer Hits"); 
+	
+	 
+	}} 
+	console.log(hitDonthit(randomDiceRoll));
+*/
