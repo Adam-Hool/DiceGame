@@ -64,12 +64,21 @@ function takePlayerTurn()
         var yes;
         yes="yes";
     	total=randomDiceRoll()+randomDiceRoll();
+<<<<<<< HEAD
 	    hit=prompt(rollAgainMessage);
 	    if (hit=="yes")
+=======
+	    /*hit=prompt(rollAgainMessage);*/
+	    while (hit==="yes")
+>>>>>>> 5943373f4fc494c1cc8605a11353e106b2859873
 	    {
 	    	total=total+randomDiceRoll();
 	    }
+<<<<<<< HEAD
 	    if (hit=="no")
+=======
+	    if (hit==="no")
+>>>>>>> 5943373f4fc494c1cc8605a11353e106b2859873
 	    {
 	    	return total;
 	    }
@@ -112,10 +121,17 @@ function takePlayerTurn()
 			}
 		}
 	}
+	player=takePlayerTurn();
 	dealer=DealersTurn();
+<<<<<<< HEAD
     console.log("your number",takePlayerTurn());
     
 	console.log("dealers number",DealersTurn());
+=======
+    console.log(player);
+    
+	console.log(dealer);
+>>>>>>> 5943373f4fc494c1cc8605a11353e106b2859873
 	checkWhoWon(player,dealer)
 /*function randomDiceRoll() {
 
