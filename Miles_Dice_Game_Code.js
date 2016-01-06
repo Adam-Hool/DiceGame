@@ -1,8 +1,27 @@
 var player1RollAgain;
 var rollAgainMessage;
-var total;
-total = dealCard();
+var roll1; 
+var roll2; 
+ 
+var firstRollTotal;
+var secondRollTotal;  
+
+roll1 = randomDiceRoll();
+roll2 = randomDiceRoll();
+firstRollTotal = addtwo(roll1, roll2); 
+secondRollTotal = addtwo(firstRollTotal, secondRollTotal); 
+
+
 rollAgainMessage = "Would you like to roll again? Yes or No ";
+
+ function addtwo(number1, number2) {
+    var result;
+    result = number1 + number2;
+    return result;
+}
+
+ 
+
 
 
 function getUserInput(message) {
@@ -18,8 +37,38 @@ function getUserInput(message) {
  }
 
 
+function firstRoll() { 
+	
+	while (firstRollTotal < 21) {
 
-function dealCard(num) 
+		 getUserInput(rollAgainMessage);}
+
+}
+
+	function takePlayerTurn()
+    {
+    	var total;
+    	var hit;
+    	total=randomDiceRoll()+randomDiceRoll();
+	    hit=prompt("do you want to hit yes or no?");
+	    while (hit==="yes")
+	    {
+	    	total=total+randomDiceRoll;
+	    }
+	    if (hit==="no")
+	    {
+	    	return total;
+	    }
+	    return total;
+	}
+
+console.log(takePlayerTurn);
+console.log(firstRollTotal);
+console.log(firstRoll());
+
+
+
+/*function dealCard(num) 
 { var newTotalHandValue;
 newTotalHandValue=num=randomDiceRoll();
 return newTotalHandValue;
@@ -27,13 +76,11 @@ return newTotalHandValue;
 
 
 
-function rollagain() { 
 
-	while (dealCard() < 21) {
 
-	 getUserInput(rollAgainMessage);
 
-	} }
+
+
 
 
 
