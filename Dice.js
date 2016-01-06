@@ -35,6 +35,19 @@ function DealersTurn()
 	    return total 
 	}
 	console.log(DealersTurn());
+
+	function bust(number)
+	{
+		if(number<=20)
+		{
+				number=true;
+		}
+		else
+		{
+            number=false;
+		} 
+		return number;
+	}
 /*function randomDiceRoll() {
 
 		var dealerCards = Math.floor((Math.random() * 10));
