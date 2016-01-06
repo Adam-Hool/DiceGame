@@ -16,8 +16,25 @@ function dealCard(num)
 	return newTotalHandValue;
 }
 player=dealCard(randomDiceRoll());
-console.log("your hand total is "+player);
+/*console.log("your hand total is "+player);*/
 
+function DealersTurn()
+    {
+    	var total;
+    	total=randomDiceRoll();
+	if  (total >= 17) 
+	    {
+		console.log("Dealer Stays");
+		return total;
+	    } 
+	while(total<17) 
+	    {
+        total=dealCard(total);
+		console.log("Dealer Hits");
+	    }
+	    return total 
+	}
+	console.log(DealersTurn());
 /*function randomDiceRoll() {
 
 		var dealerCards = Math.floor((Math.random() * 10));
@@ -30,18 +47,6 @@ console.log("your hand total is "+player);
 
  
 
-	function hitDonthit(total) {
-
-
-	if (total <= 17) {
-
-		
-		console.log("Dealer Stays");
-	} else {
-
-		console.log("Dealer Hits"); 
-	
-	 
-	}} 
+	} 
 	console.log(hitDonthit(randomDiceRoll));
 */
