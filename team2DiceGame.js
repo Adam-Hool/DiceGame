@@ -112,9 +112,9 @@ function takePlayerTurn()
 	}
 	player=takePlayerTurn();
 	dealer=DealersTurn();
-    console.log(takePlayerTurn());
+    console.log(player);
     
-	console.log(DealersTurn());
+	console.log(dealer);
 	checkWhoWon(player,dealer)
 /*function randomDiceRoll() {
 
