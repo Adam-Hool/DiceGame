@@ -3,7 +3,7 @@
 var player;
 var dealer;
 var rollAgainMessage;
-rollAgainMessage = "Would you like to roll again? Yes or No ";
+rollAgainMessage = "Would you like to roll again? yes or no ";
 
 function userInput(){
 	var namePrompt;
@@ -109,7 +109,7 @@ function takePlayerTurn()
 	}
 	player=takePlayerTurn();
 	dealer=DealersTurn();
-    console.log(player+"player's value");
+    console.log("player's value is "+player);
     
-	console.log(dealer);
+	console.log("dealer's value is "+dealer);
 	checkWhoWon(player,dealer)
