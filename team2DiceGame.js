@@ -5,6 +5,19 @@ var dealer;
 var rollAgainMessage;
 rollAgainMessage = "Would you like to roll again? Yes or No ";
 
+function userInput(){
+	var namePrompt;
+	namePrompt = prompt ("Enter your name", "");
+     inputCheck(namePrompt)
+    return namePrompt;
+}
+function inputCheck(namePrompt){
+        if (namePrompt.length > 0)
+        	{return namePrompt;
+        } else if (namePrompt.length === 0)
+            {userInput();};	
+}
+
 function getUserInput(message)
 {
 	var userInput;
