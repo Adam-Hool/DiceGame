@@ -12,7 +12,6 @@ function inputCheck(namePrompt){
         	{console.log(namePrompt)
         } else if (namePrompt.length === 0)
             {userInput();};	
-    return namePrompt;
 };
 
 player1 = userInput();
