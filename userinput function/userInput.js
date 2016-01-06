@@ -29,3 +29,5 @@ console.log("Welcome " +player2+", are you ready to roll your dice?");
 
 //AI dealer then rolls until dealer has at least a 17 or bust//
 
+
+
