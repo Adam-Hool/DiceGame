@@ -62,12 +62,12 @@ function takePlayerTurn()
     	var total;
     	var hit;
     	total=randomDiceRoll()+randomDiceRoll();
-	    hit=prompt("do you want to hit yes or no?");
-	    while (hit==="yes")
+	    hit=prompt(rollAgainMessage);
+	    while (hit===yes)
 	    {
 	    	total=total+randomDiceRoll;
 	    }
-	    if (hit==="no")
+	    if (hit===no)
 	    {
 	    	return total;
 	    }
@@ -111,9 +111,10 @@ function takePlayerTurn()
 		}
 	}
 	dealer=DealersTurn();
-    console.log(takePlayerTurn);
+    console.log(takePlayerTurn());
     
 	console.log(DealersTurn());
+	checkWhoWon(player,dealer)
 /*function randomDiceRoll() {
 
 		var dealerCards = Math.floor((Math.random() * 10));
