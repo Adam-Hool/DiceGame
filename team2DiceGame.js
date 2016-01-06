@@ -37,8 +37,7 @@ function rollDice(num)
 	newTotalHandValue=num+randomDiceRoll();
 	return newTotalHandValue;
 }
-player=rollDice(randomDiceRoll());
-/*console.log("your hand total is "+player);*/
+/*player=rollDice(randomDiceRoll());*/
 
 function DealersTurn()
     {
@@ -54,7 +53,7 @@ function DealersTurn()
         total=rollDice(total);
 		console.log("Dealer Hits");
 	    }
-	    return total 
+	return total; 
 	}
 
 function takePlayerTurn()
@@ -62,14 +61,12 @@ function takePlayerTurn()
     	var total;
     	var hit;
     	total=randomDiceRoll()+randomDiceRoll();
-	    /*hit=prompt(rollAgainMessage);*/
+	    hit=prompt(rollAgainMessage);
 	    while (hit==="yes")
 	    {
 	    	total=total+randomDiceRoll;
-	    }
-	    if (hit==="no")
-	    {
-	    	return total;
+	    	console.log(total)
+	    	hit=prompt(rollAgainMessage);
 	    }
 	    return total;
 	}
@@ -97,14 +94,14 @@ function takePlayerTurn()
 		playerWinMessage="player wins!";
 		if(bust(house)===false)
 		{
-            if (dealer>=player)
+            if (house>=player)
             {
             	console.log(dealerWinMessage);
             }
 		}
 		else if(bust(player)===false)
 		{
-			if(player>dealer)
+			if(me>dealer)
 			{
 				console.log(playerWinMessage);
 			}
@@ -112,22 +109,7 @@ function takePlayerTurn()
 	}
 	player=takePlayerTurn();
 	dealer=DealersTurn();
-    console.log(player);
+    console.log(player+"player's value");
     
 	console.log(dealer);
 	checkWhoWon(player,dealer)
-/*function randomDiceRoll() {
-
-		var dealerCards = Math.floor((Math.random() * 10));
-
-		return dealerCards;  
-
-	}
-
-	console.log(randomDiceRoll()); 
-
- 
-
-	} 
-	console.log(hitDonthit(randomDiceRoll));
-*/
