@@ -2,6 +2,28 @@
 
 var player;
 var dealer;
+var rollAgainMessage;
+rollAgainMessage = "Would you like to roll again? Yes or No ";
+
+function userInput(){
+	var namePrompt;
+	namePrompt = prompt ("Enter your name", "");
+     inputCheck(namePrompt)
+    return namePrompt;
+}
+function inputCheck(namePrompt){
+        if (namePrompt.length > 0)
+        	{return namePrompt;
+        } else if (namePrompt.length === 0)
+            {userInput();};	
+}
+
+function getUserInput(message)
+{
+	var userInput;
+	userInput = prompt(message);
+	return userInput;	
+}
 
 function randomDiceRoll()
 {
@@ -9,13 +31,13 @@ function randomDiceRoll()
 	return num;
 }
 
-function dealCard(num)
+function rollDice(num)
 {
 	var newTotalHandValue;
 	newTotalHandValue=num+randomDiceRoll();
 	return newTotalHandValue;
 }
-player=dealCard(randomDiceRoll());
+player=rollDice(randomDiceRoll());
 /*console.log("your hand total is "+player);*/
 
 function DealersTurn()
@@ -29,12 +51,28 @@ function DealersTurn()
 	    } 
 	while(total<17) 
 	    {
-        total=dealCard(total);
+        total=rollDice(total);
 		console.log("Dealer Hits");
 	    }
 	    return total 
 	}
 
+function takePlayerTurn()
+    {
+    	var total;
+    	var hit;
+    	total=randomDiceRoll()+randomDiceRoll();
+	    hit=prompt("do you want to hit yes or no?");
+	    while (hit==="yes")
+	    {
+	    	total=total+randomDiceRoll;
+	    }
+	    if (hit==="no")
+	    {
+	    	return total;
+	    }
+	    return total;
+	}
 
 	function bust(number)
 	{
@@ -72,8 +110,9 @@ function DealersTurn()
 			}
 		}
 	}
-
-    dealer=DealersTurn();
+	dealer=DealersTurn();
+    console.log(takePlayerTurn);
+    
 	console.log(DealersTurn());
 /*function randomDiceRoll() {
 
