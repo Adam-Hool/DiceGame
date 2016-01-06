@@ -44,6 +44,22 @@ function DealersTurn()
 	    return total 
 	}
 
+function takePlayerTurn()
+    {
+    	var total;
+    	var hit;
+    	total=randomDiceRoll()+randomDiceRoll();
+	    hit=prompt("do you want to hit yes or no?");
+	    while (hit==="yes")
+	    {
+	    	total=total+randomDiceRoll;
+	    }
+	    if (hit==="no")
+	    {
+	    	return total;
+	    }
+	    return total;
+	}
 
 	function bust(number)
 	{
@@ -81,8 +97,9 @@ function DealersTurn()
 			}
 		}
 	}
-
-    dealer=DealersTurn();
+	dealer=DealersTurn();
+    console.log(takePlayerTurn);
+    
 	console.log(DealersTurn());
 /*function randomDiceRoll() {
 
