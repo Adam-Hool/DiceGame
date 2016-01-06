@@ -62,12 +62,12 @@ function takePlayerTurn()
     	var total;
     	var hit;
     	total=randomDiceRoll()+randomDiceRoll();
-	    hit=prompt(rollAgainMessage);
-	    while (hit===yes)
+	    /*hit=prompt(rollAgainMessage);*/
+	    while (hit==="yes")
 	    {
 	    	total=total+randomDiceRoll;
 	    }
-	    if (hit===no)
+	    if (hit==="no")
 	    {
 	    	return total;
 	    }
@@ -110,6 +110,7 @@ function takePlayerTurn()
 			}
 		}
 	}
+	player=takePlayerTurn();
 	dealer=DealersTurn();
     console.log(takePlayerTurn());
     
