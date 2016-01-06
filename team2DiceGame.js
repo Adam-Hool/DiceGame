@@ -2,6 +2,15 @@
 
 var player;
 var dealer;
+var rollAgainMessage;
+rollAgainMessage = "Would you like to roll again? Yes or No ";
+
+function getUserInput(message)
+{
+	var userInput;
+	userInput = prompt(message);
+	return userInput;	
+}
 
 function randomDiceRoll()
 {
@@ -9,13 +18,13 @@ function randomDiceRoll()
 	return num;
 }
 
-function dealCard(num)
+function rollDice(num)
 {
 	var newTotalHandValue;
 	newTotalHandValue=num+randomDiceRoll();
 	return newTotalHandValue;
 }
-player=dealCard(randomDiceRoll());
+player=rollDice(randomDiceRoll());
 /*console.log("your hand total is "+player);*/
 
 function DealersTurn()
@@ -29,7 +38,7 @@ function DealersTurn()
 	    } 
 	while(total<17) 
 	    {
-        total=dealCard(total);
+        total=rollDice(total);
 		console.log("Dealer Hits");
 	    }
 	    return total 
