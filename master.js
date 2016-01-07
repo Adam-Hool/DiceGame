@@ -61,31 +61,22 @@ function DealersTurn()
 
 function takePlayerTurn()
     {
-    	var total;
-    	var secondTotal; 
-    	var hit;
-        var yes;
-        var no;
-        yes="yes";
-        no="no";
-
-    	total=randomDiceRoll()+randomDiceRoll();
-
-    	console.log("Your first two rolls are " + total);
-	    hit=prompt(rollAgainMessage);
-	    if (hit===("yes"))
-	    {
-	    	secondTotal=total+randomDiceRoll();
-	    	console.log("Your 3 rolls combined are " + secondTotal);
-	    }
-	    if (hit===("no"))
-	    {
-	    	return total;
-	    }}
+        var total;
+        var hit;
+        total=randomDiceRoll()+randomDiceRoll();
+        hit=prompt(rollAgainMessage);
+        while (hit !== "no")
+        {
+            total=total+randomDiceRoll();
+            console.log("player's current total is ", total);
+            hit=prompt(rollAgainMessage);
+        }
+        return total;
+    }
+	    /*secondTotal=total+randomDiceRoll();
+            console.log("Your 3 rolls combined are " + secondTotal);*/
 	    
-	
-
-	function bust(number)
+function bust(number)
 	{
 		if(number<=20)
 		{
@@ -122,7 +113,7 @@ function takePlayerTurn()
 		}
 	}
 	dealer=DealersTurn();
-    console.log("your number" + takePlayerTurn());
+    console.log("your number",takePlayerTurn());
     
 	console.log("dealers number",DealersTurn());
 	checkWhoWon(player,dealer)

@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
+
 <title>DiceJack</title>
 
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="dJstyles.css">
+<link rel="stylesheet" type="text/css" href="styles/dJstylesMaster.css">
+
 </head>
 
 <body>
@@ -20,11 +22,36 @@
 				<li>If Player rolls a total of 5 times, it's an automatic win!</li>
 			</ul>	
 	</div>
-    <form>
-    	<input type="button" value="Let's Roll" onclick="getUserConfirmation();" />
+ <form>
+    	<input type="button" value="Let's Roll" onclick="main()" />
     </form>
-<script src="master.js"></script>
+    <table border="1" style="width:100%">
+		<tr>
+			<th scope="col">player
+			</th>
+			<th scope="col">dealer
+			</th>
+		<tr>
+			<td   align="center" id='playerScoreBoard'>0
+			</td>
+			<td align="center" id='dealerScoreBoard'>0
+			</td>
+
+	</table>
+    <div class="dice"><img src = "http://www.clker.com/cliparts/T/G/9/H/d/D/ten-side-dice-black-hi.png">
+    </div>
+        <div class="dice2"><img src = http://www.clker.com/cliparts/T/G/9/H/d/D/ten-side-dice-black-hi.png>
+        </div>
+
+
+   
+    
+
+
+
+<script src="master2.0.js"></script>
 </body>
+
 
 
 
