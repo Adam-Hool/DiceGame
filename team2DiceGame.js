@@ -61,6 +61,7 @@ function takePlayerTurn()
     	var total;
     	var hit;
     	total=randomDiceRoll()+randomDiceRoll();
+    	console.log("player's current total is ", total);
 	    hit=prompt(rollAgainMessage);
 	    while (hit !== "no")
 	    {
@@ -81,6 +82,7 @@ function takePlayerTurn()
 		else
 		{
             toHeigh=true;
+            console.log("you busted")
 		} 
 		return toHeigh;
 	}
@@ -100,6 +102,7 @@ function takePlayerTurn()
 		}
 		else if(bust(me)===false)
 		{
+
 			if(me>house)
 			{
 				console.log(playerWinMessage);
