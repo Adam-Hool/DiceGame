@@ -73,35 +73,34 @@ function takePlayerTurn()
 
 	function bust(number)
 	{
+		var toHeigh;
 		if(number<=20)
 		{
-				number=false;
+				toHeigh=false;
 		}
 		else
 		{
-            number=true;
+            toHeigh=true;
 		} 
-		return number;
+		return toHeigh;
 	}
 
 	function checkWhoWon(me,house)
 	{
 		var dealerWinMessage;
 		var playerWinMessage;
-		house=dealer;
-		me=player;
 		dealerWinMessage="Dealer wins!";
 		playerWinMessage="player wins!";
 		if(bust(house)===false)
 		{
-            if (house>=player)
+            if (house>=me)
             {
             	console.log(dealerWinMessage);
             }
 		}
-		else if(bust(player)===false)
+		else if(bust(me)===false)
 		{
-			if(me>dealer)
+			if(me>house)
 			{
 				console.log(playerWinMessage);
 			}
