@@ -23,9 +23,11 @@ function dealersTurn(dealer){
 	var roll;
 	roll = randomDiceRoll();
 	dealer += roll;
+	document.getElementById('dealerScoreBoard').innerHTML=dealer;
 	console.log("Dealer rolls and now has ",dealer);
 }
 if (dealer > 20) {
+	document.getElementById('dealerScoreBoard').innerHTML=dealer;
 		console.log("Dealer has", dealer,"dealer bust!  You win!");
 		rePlay()
 	} else{ return dealer;}
@@ -46,6 +48,7 @@ function playerTurn(player,hit,rollAgainMessage,player1){
 	var hitCount;
 	hitCount = 0;
 	total=randomDiceRoll()+randomDiceRoll();
+	document.getElementById('playerScoreBoard').innerHTML=player;
 	console.log("Your first two rolls come out to " + total);
 	player = total;
 
@@ -54,17 +57,21 @@ function playerTurn(player,hit,rollAgainMessage,player1){
 	    if (hit==="yes"){	 
 	    	hitCount += 1;	    	
 	    	if (hitCount === 5) {
+	    		document.getElementById('playerScoreBoard').innerHTML=player;
 	    		console.log(player1, "has rolled 5 times", player1, " wins!");
 	    		rePlay();
 	    	}
 	    	player += randomDiceRoll();
+	    	document.getElementById('playerScoreBoard').innerHTML=player;
 		console.log(player1 ,"now has", player);
 		if (player > 20) {
+			document.getElementById('playerScoreBoard').innerHTML=player;
 	console.log(player1, " bust with", player, "!  You LOSE!");
 	rePlay();	    	
 	    }}
 	    if (hit==="no")
 	    {
+	    	document.getElementById('playerScoreBoard').innerHTML=player;
 	    	console.log(player1, "stays with ",player);
 	    	break;
 	    }}
@@ -109,7 +116,7 @@ player = playerTurn(player,hit,rollAgainMessage,player1);
 console.log("Dealers turn!");
 dealer = dealersTurn(dealer);
 checkWinner= winner(player,player1,dealer);
-document.getElementById('playerScoreBoard').innerHTML=player;
+
 document.getElementById('dealerScoreBoard').innerHTML=dealer;
 }
 
