@@ -109,7 +109,6 @@ player = playerTurn(player,hit,rollAgainMessage,player1);
 console.log("Dealers turn!");
 dealer = dealersTurn(dealer);
 checkWinner= winner(player,player1,dealer);
-document.getElementById('data').innerHTML=diceJackMaster.html;
-}
+document.getElementById('playerScoreboard').innerHTML=player;
 
 
