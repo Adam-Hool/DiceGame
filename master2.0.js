@@ -109,8 +109,8 @@ player = playerTurn(player,hit,rollAgainMessage,player1);
 console.log("Dealers turn!");
 dealer = dealersTurn(dealer);
 checkWinner= winner(player,player1,dealer);
-document.getElementById('playerScoreboard').innerHTML=player;
-document.getElementById('dealerScoreboard').innerHTML=dealer;
+document.getElementById('playerScoreBoard').innerHTML=player;
+document.getElementById('dealerScoreBoard').innerHTML=dealer;
 }
 
 
