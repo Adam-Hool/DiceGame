@@ -1,10 +1,26 @@
 var randomScore;
 var rollAgainMessage;
+var player1;
+player1 = userInput(); 
 
 
 rollAgainMessage = "Would you like to roll again? Yes or No ";
  
 randomScore = Math.floor((Math.random() * 10) + 1);
+
+function userInput(){
+    var namePrompt;
+    namePrompt = prompt ("Enter your name", "");
+     inputCheck(namePrompt)
+    return namePrompt;
+}
+
+function inputCheck(namePrompt){
+        if (namePrompt.length > 0)
+            {return namePrompt;
+        } else if (namePrompt.length === 0)
+            {userInput();}; 
+}
 
 function totalScore(score) {
 	score = twoRolls() + randomDiceRoll();
@@ -81,40 +97,59 @@ function dealersTurn()
 
 
        total=randomDiceRoll()+randomDiceRoll();
+       console.log(player1.toUpperCase() +":" + " ROLL 1 AND ROLL 2 = " + total);
         hit=prompt(rollAgainMessage);
         while (hit !== "no")
         {
             total=total+randomDiceRoll();
-            console.log("player's current total is ", total);
+            console.log(player1.toUpperCase() +":" + " NEW TOTAL IS: ", total);
             hit=prompt(rollAgainMessage);
         }
 
         return total;
     }
 
+         function rePlay(){
+    var play;
+    play = prompt ("Do you want to play again? yes or no");
+        if (play === "yes") {
+            main()
+        }else if (play === "no"){
+            console.log("Thank you for playing ");
+        };
+}
+
     function checkWhoWon(player, dealer) {
 
+        player = takePlayerTurn(player);
     	dealer = dealersTurn();
-    	player = takePlayerTurn();
+    	
 
-    	if (dealer > 20) {
+    	if (player > 20) {
 
-    		console.log("Dealer Bust. You Win");
+                console.log("You Bust. Dealer Wins");
+                rePlay(); 
 
-    		}else if (player > 21) {
+    		}else if (dealer > 20) {
 
-    			console.log("You Bust. Dealer Wins");
+            console.log("Dealer Bust. You Win");
+            rePlay(); 
+    
     		}  else if (dealer < player) {
 
+
     		console.log("You Win!");
+            rePlay();
 
     		}else { 
     			console.log("Dealer Wins");
+                rePlay(); 
     		}
     	}
 
+   
 
-    
+
 
 
     	    
