@@ -20,7 +20,7 @@ function randomDiceRoll()
 
 }
 
-function checker(dealer){
+function takeDealerTurn(dealer){
 	while (dealer < 17) {
 	var roll;
 	roll = randomDiceRoll();
@@ -33,7 +33,7 @@ if (dealer > 20) {
 	} else{ return dealer;}
 };
 
-function rePlay(player1){
+function rePlay(){
     var play;
     play = prompt ("Do you want to play again? yes or no");
         if (play === "yes") {
@@ -57,9 +57,9 @@ var total;
 player1 = userInput();
 rollAgainMessage = "Would you like to roll again? yes or no ";
 
-player = 0
-dealerTotalRoll = 0
-dealer = 0
+player = 0;
+dealerTotalRoll = 0;
+dealer = 0;
 
 
 	total=randomDiceRoll()+randomDiceRoll();
@@ -81,7 +81,7 @@ dealer = 0
 if (player > 20) {
 	console.log(player1, " bust with", player, "!  You LOSE!");
 	rePlay()
-	    } else	{dealer = checker(dealer);
+	    } else	{dealer = takeDealerTurn(dealer);
 	    	};
 
 	    	if (dealer >= player){
