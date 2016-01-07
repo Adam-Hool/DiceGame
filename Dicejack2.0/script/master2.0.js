@@ -14,7 +14,7 @@ function inputCheck(namePrompt){
 }
 
 function randomDiceRoll(){
-	var num=Math.floor((Math.random() * 1) + 1);
+	var num=Math.floor((Math.random() * 10) + 1);
 	return num;
 }
 
