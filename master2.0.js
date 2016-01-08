@@ -114,6 +114,10 @@ dealer = 0;
 
 console.log(player1, "'s turn!");
 player = playerTurn(player,hit,rollAgainMessage,player1);
+if(player>20)
+{
+	return;
+}
 console.log("Dealers turn!");
 dealer = dealersTurn(dealer);
 checkWinner= winner(player,player1,dealer);
