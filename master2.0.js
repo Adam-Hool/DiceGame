@@ -48,9 +48,10 @@ function playerTurn(player,hit,rollAgainMessage,player1){
 	var hitCount;
 	hitCount = 0;
 	total=randomDiceRoll()+randomDiceRoll();
+	player = total;
 	document.getElementById('playerScoreBoard').innerHTML=player;
 	console.log("Your first two rolls come out to " + total);
-	player = total;
+	
 
 	while (player < 20){
 		hit = prompt(rollAgainMessage);
